@@ -1,0 +1,53 @@
+<div>
+    <div>
+        <h1>Checkout</h1>
+        <h4>Your Total: ${{total}}</h4>
+        <div id="charge-error" class="alert alert-danger {{#if noError}}hidden{{/if}}">
+            {{errMsg}}
+        </div>
+        <form action="/checkout" method="post" id="checkout-form">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" required name="name">
+                    </div>
+                </div>
+                 <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Address</label>
+                        <input type="text" id="address" class="form-control" required name="address">
+                    </div>
+                </div>
+                <hr>
+                 <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Card Holder name</label>
+                        <input type="text" id="card-name" class="form-control" required>
+                    </div>
+                </div> <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Credit Cart Number</label>
+                        <input type="text" id="card-number" class="form-control" required>
+                    </div>
+                     <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Expiration Month</label>
+                        <input type="text" id="card-expiry-year" class="form-control" required>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">CVC</label>
+                        <input type="text" id="card-CVC" class="form-control" required>
+                    </div>
+                </div>
+            </div>  
+            <button type="submit" class="btn btn-success">Buy now</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="src/javascripts/checkout.js"></script>
